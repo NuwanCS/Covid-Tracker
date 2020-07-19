@@ -1,0 +1,129 @@
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 10px;
+  padding-right: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #272830;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #272830;
+  border-radius: 10px;
+}
+#nav {
+  height: 50px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.chart-data {
+  width: 30%;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.map-info {
+  background-color: bisque;
+  height: 400px;
+}
+
+.data-info {
+  height: 700px;
+  display: flex;
+  justify-content: center;
+}
+
+.country-data {
+  margin-top: 20px;
+  overflow: scroll;
+  height: 400px;
+}
+
+.info-flag img {
+  width: 100px;
+  border-radius: 5px;
+}
+
+.info-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #555;
+}
+
+.info-container {
+  width: 150px;
+}
+
+.info-flag {
+  height: 80px;
+  width: 100%;
+  background-size: cover;
+  border-radius: 8px;
+}
+
+.info-confirmed,
+.info-recovered,
+.info-deaths {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.search-container {
+  display: flex;
+  z-index: 2;
+  position: absolute;
+  width: 35%;
+  right: 8%;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+}
+
+#search-selection {
+  background-color: #272830;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.ui.selection.active.dropdown .menu {
+  background-color: #272830;
+  color: #ffffff;
+  border: none;
+}
+
+input {
+  color: #ffffff;
+}
+
+.ui.selection.active.dropdown .menu > .item {
+  background-color: #272830;
+  color: #ffffff;
+  border: none;
+}
+
+.chart-container {
+  display: flex;
+  z-index: 2;
+  position: absolute;
+  width: 35%;
+  right: 60%;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  bottom: 10px;
+}

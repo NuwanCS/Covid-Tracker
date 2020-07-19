@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/transition.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="new style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+
+    <title>COVID-19 Tracker</title>
+  </head>
+  <body>
+    <div class="container-fluid main">
+      <div class="col-4 side-menu">
+        <div class="title">
+          <h3>COVID-19 Tracker</h3>
+        </div>
+        <div class="cases-stat">
+          <div class="last-update">
+            <h5>
+              (Covid-19 data sourced from Worldometers, updated every 10
+              minutes)
+            </h5>
+          </div>
+          <div class="country-name">
+            <h2>WorldWide</h2>
+          </div>
+          <div class="tabs">
+            <div class="col">
+              <div class="card cases" onclick="changeDataSelection('cases')">
+                <div class="card-body">
+                  <h1 class="card-subtitle total-number">1,436,886</h1>
+                  <div class="text-muted font-weight-bold total cases-total">
+                    1.69M Total
+                  </div>
+                  <h6 class="card-title">Total&nbsp;Confirmed</h6>
+                </div>
+                <div class="tab-selection"></div>
+              </div>
+            </div>
+            <div class="col">
+              <div
+                class="card recovered"
+                onclick="changeDataSelection('recovered')"
+              >
+                <div class="card-body">
+                  <h1 class="card-subtitle recovered-number">302,964</h1>
+                  <div
+                    class="text-muted font-weight-bold total recovered-total"
+                  >
+                    1.69M Total
+                  </div>
+                  <div class="tab-selection"></div>
+                  <h6 class="card-title">Total&nbsp;Recovered</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card deaths" onclick="changeDataSelection('deaths')">
+                <div class="card-body">
+                  <h1 class="card-subtitle deaths-number">82,191</h1>
+                  <div class="text-muted font-weight-bold total deaths-total">
+                    1.69M Total
+                  </div>
+                  <div class="tab-selection"></div>
+                  <h6 class="card-title">Total&nbsp;Deaths</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="country-list">
+          <div class="side-panel-container">
+            <div class="cases-table-container">
+              <h4>Live Cases by Country</h4>
+              <div class="country-data">
+                <table class="table">
+                  <tbody id="table-data"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row map-container">
+        <div class="col">
+          <div id="map"></div>
+        </div>
+        <div class="col search-container">
+          <div class="ui fluid search selection dropdown" id="search-selection">
+            <input type="hidden" name="country" />
+            <i class="dropdown icon"></i>
+            <div class="default text">WorldWide</div>
+            <div class="menu"></div>
+          </div>
+        </div>
+        <!-- <div class="chart-container">
+          <h4>Total Cases Globally</h4>
+          <div class="linear-chart p-3">
+            <canvas id="myChart" width="650" height="200"></canvas>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="map-style.js"></script>
+    <script src="charts.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXublWIxU2jExmAjGyagDWPpVGbSjbWRw&callback=initMap"
+      async
+      defer
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/transition.min.js"></script>
+  </body>
+</html>

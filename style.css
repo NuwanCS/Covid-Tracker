@@ -1,0 +1,195 @@
+html,
+body,
+h1,
+h3,
+h2,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.main {
+  display: flex;
+}
+
+.side-menu {
+  height: 100vh;
+  background-color: #191a1d;
+  width: 25%;
+  min-width: 360px;
+  color: #ffffff;
+  padding-right: 30px;
+  overflow: hidden;
+}
+
+.map-container {
+  width: 75%;
+  background-color: chocolate;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+body {
+  overflow: scroll;
+}
+
+.title {
+  background-color: #2b3b93;
+}
+
+.title h3 {
+  text-align: center;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.last-update {
+  padding: 10px;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.last-update h5 {
+  font-size: 10px;
+  color: #6a6c7b;
+}
+
+.country-name {
+  padding: 20px;
+  margin: 0;
+  text-align: center;
+}
+
+.country-name h2 {
+  font-size: 18px;
+}
+.tabs {
+  display: flex;
+  margin-right: 15px;
+  justify-content: space-evenly;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.col {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.side-panel-container {
+  border-radius: 30px;
+  color: #ffffff;
+  background-color: #272830;
+  box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
+  padding-top: 15px;
+}
+
+.side-panel-container h4 {
+  text-align: center;
+  color: #ffffff;
+}
+
+.table {
+  color: #ffffff;
+}
+.total-number {
+  color: #cc1034;
+}
+
+.recovered-number {
+  color: #7fd922;
+}
+
+.deaths-number {
+  color: #fa5575;
+}
+
+.cases-table-container h4,
+.chart-container h4 {
+  color: #6a5d5d;
+  font-weight: 400;
+}
+
+.country-data .table td {
+  padding: 0.5rem;
+  border: none;
+}
+
+.tab-selection {
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: none;
+  outline: none;
+}
+.cases .tab-selection {
+  background-color: #cc1034;
+}
+
+.recovered .tab-selection {
+  background-color: #7fd922;
+}
+
+.deaths .tab-selection {
+  background-color: #ffffff;
+}
+
+.card-body {
+  background-color: #191a1d;
+  border: none;
+  padding: 0;
+  padding-top: 10px;
+  outline: none;
+  text-align: center;
+}
+
+.card-body:hover {
+  background-color: #353846;
+  border-radius: 10px;
+}
+
+.card {
+  border: none;
+  background-color: initial;
+}
+
+.country-list {
+  margin-top: 10px;
+}
+
+/* @media (min-width: 576px) {
+  .side-menu {
+    height: 100vh;
+    background-color: #191a1d;
+    width: 90%;
+    color: #ffffff;
+    padding-right: 30px;
+    overflow: hidden;
+  }
+
+  .map-container {
+    width: 10%;
+    background-color: chocolate;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+  }
+} */
+
+/* @media (min-width: 768px)
+@media (min-width: 992px)
+@media (min-width: 1200px) */
